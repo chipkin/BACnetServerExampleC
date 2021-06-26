@@ -25,10 +25,11 @@ all: $(NAME)
 
 $(NAME): obj/main.o $(OBJECTS)
 	@echo 'Building target: $@'
-	$(CC) $(CPPFLAGS) $(LDFLAGS) -o $(NAME) obj/main.o $(OBJECTS)
+	$(CPP) $(CPPFLAGS) $(LDFLAGS) -o $(NAME) obj/main.o $(OBJECTS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+# Build the "C" project file with the "C" GCC compiler.
 obj/main.o: main.c
 	@mkdir -p obj
 	@echo 'Building file: $<'
